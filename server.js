@@ -9,6 +9,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send({
+    activeStatus: true,
+    error:false,
+    message: "Server is running",
+  });
+});
+
 // Set up Multer for file uploads
 const upload = multer({ storage: multer.memoryStorage() });
 
